@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Free Templates</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            box-sizing: border-box;
+        }
+        @keyframes slideInFromLeft {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+        }
+        @keyframes fade{
+            from{
+                opacity: 0.4;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+        a{
+            text-decoration: none;
+        }
+        .discount{
+            width: 100%;
+            height: 45px;
+            background-color: black;
+        }
+        .discount p{
+            color: #fff;
+            text-align: center;
+            font-size: 17px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 100;
+            padding: 12px 0;
+        }
+        .logo p{
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgb(190, 236, 24);
+            padding: 20px 70px;
+            border-right: 1px solid #000;
+        }
+        .navbar{    
+            display: flex;
+            text-align: center;
+            border: 1px solid #000;
+        }
+        nav{
+            flex: 1;
+            text-align: right;
+        }
+        nav ul{
+            display: inline-block;
+            list-style-type: none;
+        }
+        nav ul li{
+            display: inline-block;
+            margin-top: 20px;
+        }
+        nav ul li a{
+            color: rgb(75, 71, 71);
+            text-decoration: none;
+            font-size: 23px;
+            font-weight: 200;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-transform: capitalize;
+            padding: 19px 70px;
+            border-right: 1px solid #000;
+            transition: 0.3s ease-in-out;
+        }
+        nav ul li a:hover{
+            background-color: black;
+            color: rgb(190, 236, 24);
+        }
+        #shopping-bag{
+            font-size: 35px;
+            padding: 16px;
+            color: #000;
+            margin: 0 5px;
+        }
+        #shopping-bag:hover{
+            color: rgb(190, 236, 24);
+            background: #000;
+        }
+        #menu-icon{
+            font-size: 35px;
+            padding:  16px;
+            display: none;
+        }
+        .title{
+            text-align: center;
+            width: 35%;
+            margin: 3% 35%;
+        }
+        .title h1{
+            font-size: 80px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .title p{
+            font-size: 25px;
+            background-color: rgb(190, 236, 24);
+            padding: 3px 0;
+            animation: 4.5s ease slideInFromLeft;  
+        }
+        .container{
+            background: linear-gradient(rgb(255,255,255),rgb(190, 236, 24));
+        }
+        .fade{
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        .slider{
+            max-width: 650px;
+            margin: auto;
+        }
+        .slides{
+            display: none;
+        }
+        img {
+            vertical-align: middle;
+            width: 100%;
+            height: 500px;
+        }
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .active {
+            background-color: #717171;
+        }
+        .product-title{
+            margin: 50px 0;
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+            text-transform: capitalize;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .container-product{
+            max-width: 1300px;
+            margin: auto;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .col-4{
+            flex-basis: 25%;
+            padding: 10px;
+            margin-bottom: 50px;
+            min-width: 200px;
+        }
+        .col-4 img{
+            width: 100%;
+            height: 350px;
+            background: rgb(219, 216, 216);
+            transition: transform .5s;
+        }
+        .col-4 img:hover{
+            transform: translatey(-10px);
+        }
+        .shop-btn{
+            margin: 50px 0;
+            text-align: center;
+        }
+        .shop-btn button{
+            font-size: 20px;
+            padding: 5px 33px;
+            color: rgb(190, 236, 24);
+            background-color: #000;
+            border: 2px solid #000;
+            cursor: pointer;
+        }
+        .shop-btn button:hover{
+            color: #000;
+            background-color: rgb(190, 236, 24);
+        }
+        .container-shop{
+            margin: 50px 0;
+        }
+        .text{
+            text-align: center;
+            line-height: 1.2;
+            background: linear-gradient(rgb(255,255,255),rgb(190,236,24));
+            animation: 4.5s ease slideInFromLeft;
+        }
+        .text h1{
+            font-size: 130px;
+            font-weight: bold;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .text i{
+            font-size: 60px;
+            margin-top: 180px;
+        }
+        .text h6{
+            font-size: 25px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 100;
+            margin-top: 20px;
+        }
+        .text p{
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 200;
+            margin-bottom: 180px;
+        }
+        .col-2{
+            flex-basis: 50%;
+        }
+        .col-2 img{
+            height: 650px;
+        }
+        .container-off{
+            margin: 20px 0;
+        }
+        .container-off ul li{
+            display: inline-block;
+            font-size: 20px;
+        }
+        .container-off{
+            text-align: center;
+            margin: 50px 0;
+            text-decoration: underline;
+            font-size: 20px;
+        }
+        .fa-long-arrow-right{
+            font-size: 55px;
+        }
+        .fa-long-arrow-left{
+            font-size: 55px;
+        }
+
+
+        .footer{
+            font-size: 14px;
+            margin-bottom: 20px;
+		}
+		.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+            min-width: 300px;
+            padding: 70px 80px;
+        }
+		.footer-col-1{
+            background: #000;
+            color: #fff;
+        }
+        .footer-col-1 h3{
+            font-size: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-bottom: 20px;
+        }
+        .footer-col-1 ul li a{
+            color: #fff;
+            font-size: 17px;
+            line-height: 2;
+        }
+        .footer-col-2 h3, .footer-col-3 h3, .footer-col-4 h3{
+            font-size: 25px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 200;
+            text-transform: capitalize;
+            color: rgb(150, 148, 148);
+            margin-bottom: 10px;
+        }
+        .footer-col-2 ul li a, .footer-col-3 ul li a, .footer-col-4 ul li a{
+            font-size: 17px;
+            color: rgb(75, 71, 71);
+            line-height: 1.5;
+            text-transform: capitalize;
+        }
+        .footer-1{
+            padding: 30px 0;
+            background: rgb(190, 236, 24);
+        }
+        .col-f a{
+            color: #fff;
+            padding: 0 10px;
+            font-size: 25px;
+            align-items: center;
+        }
+        .col-f p{
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+            margin: 10px 0;
+            text-align: center;
+        }
+        @media screen and (max-width: 1200px){
+            nav ul {
+                position: absolute;
+                top: 110px;
+                left: 0;
+                width: 100%;
+                background: #222;
+                overflow: hidden;
+            }
+            nav ul li{
+                display: block;
+                align-items: center;
+                text-align: center;
+                margin: 25px 0;
+            }
+            nav ul li a{
+                color: #fff;
+                text-align: center;
+                border-right: none;
+            }
+            #menu-icon{
+                display: block;
+                cursor: pointer;
+            }
+            .title h1{
+                font-size: 50px;
+            }
+            .title p{
+                font-size: 20px;
+            }
+            .container-off{
+                font-size: 18px;
+            }
+        }
+        @media screen and (max-width: 850px){
+            .col-4{
+                min-width: 280px;
+            }
+            .text i{
+                margin-top: 51px;
+            }
+            .text p{
+                margin-bottom: 151px;
+            }
+            .container-off{
+                font-size: 15px;
+            }
+        }
+        @media screen and (max-width: 760px){
+            .title h1{
+                font-size: 40px;
+            }
+            .title p{
+                font-size: 17px;
+            }
+            .text i{
+                margin-top: 101px;
+            }
+            .text p{
+                margin-bottom: 101px;
+            }
+            .footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+                padding: 50px 50px;
+            }
+            .fa-long-arrow-right{
+                font-size: 35px;
+            }
+            .fa-long-arrow-left{
+                font-size: 35px;
+            }
+        }
+        @media screen and (max-width: 560px){
+            .discount p{
+                font-size: 14px;
+            }
+            .logo p{
+                font-size: 15px;
+                padding: 18px 35px;
+                border-right: 1px solid #000;
+            }
+            #shopping-bag{
+                font-size: 25px;
+            }
+            #menu-icon{
+                font-size: 25px;
+            }
+            .title h1{
+                font-size: 30px;
+            }
+            .title p{
+                font-size: 15px;
+                font-weight: bold;
+            }
+            .slider{
+                max-width: 300px;
+            }
+            .row{
+                display: block;
+            }
+            .text p{
+                margin: 0;
+            }
+            .col-2 img{
+                height: 500px;
+            }
+            .footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+                padding: 35px 80px;
+            }
+            .container-off{
+                font-size: 8px;
+            }
+            .fa-long-arrow-right{
+                font-size: 25px;
+            }
+            .fa-long-arrow-left{
+                font-size: 25px;
+            }
+            .col-f a{
+                margin: 10px;
+                align-items: center;
+                text-align: center;
+                
+            }
+            .col-f p{
+                margin-top: 50px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <!--discount-->
+    <div class="discount">
+        <p>Sale is on! 25% off sitewide using TEES25 at checkout</p> 
+    </div>
+
+    <!--navbar-->
+    <div class="navbar">
+        <div class="logo">
+             <p>t shop</p>
+        </div>
+        <nav>
+            <ul id="mymenu">
+                <li><a href="">new</a></li>
+                <li><a href="">men</a></li>
+                <li><a href="">women</a></li>
+                <li><a href=""> login   &#160;<i class="fa fa-sign-in"></i></a></li>
+            </ul>
+        </nav>
+        <a href=""><i class="fa fa-shopping-bag" id="shopping-bag"></i></a>
+        <i class="fa fa-bars" id="menu-icon" onclick="mytoggle()"></i>
+    </div>
+
+    <!--title-->
+    <div class="title">
+        <h1>t shop</h1>
+        <p>There's One for Everyone</p>
+    </div>
+    <div class="container">
+        <div class="slider">
+            <div class="slides fade">
+                <img src="2.jpg" >
+            </div>
+            <div class="slides fade">
+                <img src="1.jpg" >
+            </div>
+            <div class="slides fade">
+                <img src="3.jpg">
+            </div>
+        </div>
+        <br>
+        <div style="text-align:center">
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        </div>
+    </div>
+    
+    <!--products-->
+
+    <div class="product-title">
+        <h1>new drops</h1>
+    </div>
+
+    <div class="container-product">
+        <div class="row">
+            <div class="col-4">
+                <img src="p1.png" >
+                <h4>I'm a product</h4>
+                <p>$15.00</p>
+            </div>
+            <div class="col-4">
+                <img src="p1.png" >
+                <h4>I'm a product</h4>
+                <p>$15.00</p>
+            </div>
+            <div class="col-4">
+                <img src="p1.png" >
+                <h4>I'm a product</h4>
+                <p>$15.00</p>
+            </div>
+            <div class="col-4">
+                <img src="p1.png" >
+                <h4>I'm a product</h4>
+                <p>$15.00</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img src="p1.png" >
+                <h4>I'm a product</h4>
+                <p>$15.00</p>
+            </div>
+            <div class="col-4">
+                <img src="p1.png" >
+                <h4>I'm a product</h4>
+                <p>$15.00</p>
+            </div>
+            <div class="col-4">
+                <img src="p1.png" >
+                <h4>I'm a product</h4>
+                <p>$15.00</p>
+            </div>
+            <div class="col-4">
+                <img src="p1.png" >
+                <h4>I'm a product</h4>
+                <p>$15.00</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!--shop-->
+    <div class="shop-btn">
+        <a href=""><button>Shop New</button></a>
+    </div>
+
+    <div class="container-shop">
+        <div class="row">
+            <div class="col-2 text">
+                <i class="fa fa-bolt"></i>
+                <h6>SALES IS ON!</h6>
+                <h1>25% OFF</h1>
+                <p>25% off sitewide using TEES25 at checkout</p>
+            </div>
+            <div class="col-2">
+                <img src="s1.jpg">
+            </div>
+        </div>
+    </div>
+
+
+    <!--off-->
+
+    <div class="container-off">
+            
+            <h1>
+                <i class="fa fa-long-arrow-right"></i>&#160;
+                GET 10% OFF YOUR FIRST ORDER! &#160; 
+                <i class="fa fa-long-arrow-left"></i>
+            </h1>
+            
+    </div>
+
+
+    <!--footer-->
+    <div class="footer">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>T SHOP</h3>
+                <ul>
+                    <li><a href="">info@mysite.com</a></li>
+                    <li><a href="">+91 97651148444</a></li>
+                </ul> 
+            </div>
+            <div class="footer-col-2">
+                <h3>shop</h3>
+                <ul>
+                    <li><a href="">new</a></li>
+                    <li><a href="">women</a></li>
+                    <li><a href="">men</a></li>
+                </ul>
+            </div>
+            <div class="footer-col-3">
+                <h3>our stores</h3>
+                <ul>
+                    <li><a href="">about us</a></li>
+                    <li><a href="">subscribe</a></li>
+                    <li><a href="">faq</a></li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>terms & condition</h3>
+                <ul>
+                    <li><a href="">store policy</a></li>
+                    <li><a href="">shipping & returns</a></li>
+                    <li><a href="">payment method</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-1">
+        <div class="row">
+            <div class="col-f">
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-instagram"></i></a>
+                <a href=""><i class="fa fa-youtube"></i></a>
+                <a href=""><i class="fa fa-pinterest-p"></i></a>
+                <a href=""><i class="fa fa-twitter-square"></i></a>
+            </div>
+            <div class="col-f">
+                <p>&#169; 2021 by jerry</p> 
+            </div>
+        </div>
+    </div>
+    <!--script-->
+    <script>
+        var mymenu = document.getElementById("mymenu");
+        mymenu.style.maxHeight = '0px';
+        function mytoggle(){
+            if(mymenu.style.maxHeight == '0px'){
+                mymenu.style.maxHeight = '300px';
+            }
+            else{
+                mymenu.style.maxHeight = '0px';
+            }
+        }
+
+
+
+        var slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("slides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) 
+            {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
+    </body>
+</html>
