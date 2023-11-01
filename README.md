@@ -1,2 +1,2 @@
 # T-shop
- https://jerryjoke.github.io/T-shop.github.io/
+ https://tamilarasu18.github.io/T-shop.github.io/
